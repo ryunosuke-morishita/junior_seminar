@@ -1,0 +1,47 @@
+project:
+  type: book
+  output-dir: docs
+  
+lang: ja
+
+book:
+  title: "関数, 一次関数, 二次関数"
+  author: "Ryunosuke Morishita"
+  date: today
+  chapters:
+    - index.qmd
+    - lecture_1.qmd
+    - lecture_2.qmd
+    - lecture_3.qmd
+
+format:
+  html:
+    css: styles.css
+    theme:
+      light: classic
+      dark: darkly
+    number-sections: true
+    fig-cap-location: bottom 
+    code-line-numbers: true
+    highlight-style: a11y
+    html-math-method: mathjax
+    toc: true
+    toc-depth: 3
+    link-external-newwindow: true
+    code-annotations: hover
+    mainfont: "Hragino Sans"
+    monofont: "Noto Sans Mono"
+      
+  pdf:
+    documentclass: scrreprt
+    number-sections: true
+    
+knitr: 
+  opts_chunk: 
+    dev: ragg_png     # 文字化け防止
+    dpi: 450          # 高解像度の図を使用（サイズ大きめ）
+    fig-align: center # 図は中央揃え
+    fig.pos: "H"
+    warning: false    # 警告メッセージを消す
+    message: false 
+

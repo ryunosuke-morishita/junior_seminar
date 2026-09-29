@@ -1,0 +1,22 @@
+# Quarto 一時フォルダ・中間生成物
+/.quarto/
+**/*.quarto_ipynb
+
+# LaTeX / LuaLaTeX コンパイル時の一時ファイル（PDF作成時のログ等）
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# R / RStudio 関連（使っていなくても念のため）
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# OS 固有ファイル
+.DS_Store
+Thumbs.db
