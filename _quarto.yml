@@ -16,7 +16,6 @@ book:
 
 format:
   html:
-    css: styles.css
     theme:
       light: classic
       dark: darkly

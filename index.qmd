@@ -21,11 +21,11 @@ $y$が$x$の関数であるとは、$x$の値を決めると$y$の値が対応�
 :::: {.columns}
 
 ::: {.column width="50%"}
-![関数のイメージ](figures/image4.png){#fig-function fig-cap="関数のイメージ" width="70%"}
+![関数のイメージ](figures/image1.png){#fig-function fig-cap="関数のイメージ" width="70%"}
 :::
 
 ::: {.column width="50%"}
-![具体例](figures/image5.png){#fig-function1 fig-cap="具体的なイメージ" width="70%"}
+![具体例](figures/image2.png){#fig-function1 fig-cap="具体的なイメージ" width="70%"}
 :::
 
 ::::

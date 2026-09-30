@@ -66,53 +66,9 @@ $$
   * **$a > 0$** のとき：上に開いた曲線（下に凸）。原点で最も低い位置をとる。
   * **$a < 0$** のとき：下に開いた曲線（上に凸）。原点で最も高い位置をとる。
 
- 以下の図\ref{fig-quadratic-graph} は、$a > 0$ と $a < 0$ における放物線の概形を示したものである。
+ 以下の @fig-graph は、$a > 0$ と $a < 0$ における放物線の概形を示したものである。
 
-```{=latex}
-\begin{figure}[H]
-\centering
-
-\begin{tikzpicture}[scale=0.75, >=stealth]
-
-  % ==================== 左側: a > 0 (上に開く) ====================
-  \begin{scope}[xshift=0cm]
-    \node[above, font=\bfseries] at (0, 3.9) {$a > 0$（上に開く・下に凸）};
-    
-    % 座標軸
-    \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
-    \draw[->] (0,-0.8) -- (0,3.5) node[above] {$y$};
-    \node[below left] at (0,0) {O};
-
-    % 放物線 y = x^2 (スケール調整)
-    \draw[thick, blue, domain=-1.8:1.8, samples=50] plot (\x, {0.8*\x*\x}) node[right] {$y=ax^2$};
-
-    % 頂点
-    \fill[red] (0,0) circle (2.5pt) node[below right, text=red, font=\small] {頂点 $(0,0)$};
-  \end{scope}
-
-  % ==================== 右側: a < 0 (下に開く) ====================
-  \begin{scope}[xshift=6.5cm]
-    \node[above, font=\bfseries] at (0, 3.9) {$a < 0$（下に開く・上に凸）};
-    
-    % 座標軸
-    \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
-    \draw[->] (0, -3.5) -- (0, 0.8) node[above] {$y$};
-    \node[above left] at (0,0) {O};
-
-    % 放物線 y = -x^2 (スケール調整)
-    \draw[thick, blue, domain=-1.8:1.8, samples=50] plot (\x, {-0.8*\x*\x}) node[right] {$y=ax^2$};
-
-    % 頂点
-    \fill[red] (0,0) circle (2.5pt) node[above right, text=red, font=\small] {頂点 $(0,0)$};
-  \end{scope}
-
-\end{tikzpicture}
-
-\caption{二次関数 $y=ax^2$ のグラフの概形}
-\label{fig-quadratic-graph}
-
-\end{figure}
-```
+![二次関数$y = ax^2$のグラフの概形](figures/image6.png){#fig-graph fig-cap="二次関数$y = ax^2$のグラフの概形" width=60%}
 
 ### 関数の最大値・最小値
 
@@ -151,74 +107,6 @@ $$
 
  このように、最大値や最小値は、単に $y$ だけを見て決まるのではなく、**「独立変数 $x$ がどの範囲を動き、その中でグラフがどのような挙動をとるか」**によって決定される。
 
- 図\ref{fig-max-min-compare} は、一次関数と二次関数において独立変数 $x$ の動きがどのように最大値・最小値を引き起こすかを示した比較図である。
+ @fig-max は、一次関数と二次関数において独立変数 $x$ の動きがどのように最大値・最小値を引き起こすかを示した比較図である。
 
-```{=latex}
-\begin{figure}[H]
-\centering
-
-\begin{tikzpicture}[scale=0.75, >=stealth]
-
-  % ==================== 左側: 一次関数の最大・最小 ====================
-  \begin{scope}[xshift=0cm]
-    \node[above, font=\bfseries] at (1.2, 4) {一次関数（端点で決まる）};
-    
-    % 座標軸
-    \draw[->] (-0.5,0) -- (3.2,0) node[right] {$x$};
-    \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
-    \node[below left] at (0,0) {O};
-
-    % グラフ
-    \draw[gray!40] (-0.2, 0.4) -- (2.8, 3.4);
-    \draw[ultra thick, blue] (0.5, 1.1) -- (2.2, 2.8);
-
-    % 端点と補助線
-    \draw[dashed] (0.5, 0) -- (0.5, 1.1) -- (0, 1.1);
-    \draw[dashed] (2.2, 0) -- (2.2, 2.8) -- (0, 2.8);
-
-    \fill (0.5, 1.1) circle (2.5pt);
-    \fill (2.2, 2.8) circle (2.5pt);
-
-    % ラベル
-    \node[below, font=\small] at (0.5, 0) {$x_1$};
-    \node[below, font=\small] at (2.2, 0) {$x_2$};
-    \node[left, red, font=\small] at (0, 1.1) {最小値};
-    \node[left, red, font=\small] at (0, 2.8) {最大値};
-  \end{scope}
-
-  % ==================== 右側: 二次関数の最大・最小（頂点を含む） ====================
-  \begin{scope}[xshift=6.5cm]
-    \node[above, font=\bfseries] at (0.5, 4) {二次関数（頂点が関与する）};
-    
-    % 座標軸
-    \draw[->] (-1.8,0) -- (2.8,0) node[right] {$x$};
-    \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
-    \node[below left] at (0,0) {O};
-
-    % グラフ
-    \draw[gray!40, domain=-1.5:2.2, samples=40] plot (\x, {0.6*\x*\x});
-    \draw[ultra thick, blue, domain=-1.0:2.0, samples=40] plot (\x, {0.6*\x*\x});
-
-    % 補助線
-    \draw[dashed] (-1.0, 0) -- (-1.0, 0.6) -- (0, 0.6);
-    \draw[dashed] (2.0, 0) -- (2.0, 2.4) -- (0, 2.4);
-
-    \fill (-1.0, 0.6) circle (2.5pt);
-    \fill (2.0, 2.4) circle (2.5pt);
-    \fill[red] (0,0) circle (2.8pt);
-
-    % ラベル
-    \node[below, font=\small] at (-1.0, 0) {$x_1$};
-    \node[below, font=\small] at (2.0, 0) {$x_2$};
-    \node[left, red, font=\small] at (0, 2.4) {最大値};
-    \node[below right, red, font=\small] at (0, 0) {最小値(頂点)};
-  \end{scope}
-
-\end{tikzpicture}
-
-\caption{一次関数と二次関数における最大値・最小値の決まり方}
-\label{fig-max-min-compare}
-
-\end{figure}
-```
-
+![一次関数と二次関数における最大値・最小値の決まり方](figures/image7.png){#fig-max fig-cap="一次関数と二次関数における最大値・最小値の決まり方" width=60%}

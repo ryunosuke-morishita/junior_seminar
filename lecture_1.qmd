@@ -40,103 +40,17 @@ $$
 
 　関数の場合について考えてみる。例として、$x$ と $y$ の一次関数 $y=3x$ を考える。$x$ が $2$ から $5$ まで変化したとき、$y$ はどのように変化するだろうか。関数の式が与えられているので、それぞれの $x$ に対応する $y$ の値を求めることができる。$x=2$ のとき、$y=3\times2=6$ であり、$x=5$ のとき、$y=3\times5=15$ である。したがって、$x$ が $2$ から $5$ まで変化すると、$y$ は $6$ から $15$ まで変化する。このときの $y$ の増加量は、$15-6=9$ となる。
 
-　重要なのは、$x$ の「変化する前の値」と「変化した後の値」に、それぞれ対応する $y$ の値があるということである。つまり、$x=2$ のときは $y=6$、$x=5$ のときは $y=15$ というように対応している。この対応関係を意識することが、関数における増加量を考えるうえで重要である。図\ref{fig-increase-amount} は、この関係を図で表したものである。
+　重要なのは、$x$ の「変化する前の値」と「変化した後の値」に、それぞれ対応する $y$ の値があるということである。つまり、$x=2$ のときは $y=6$、$x=5$ のときは $y=15$ というように対応している。この対応関係を意識することが、関数における増加量を考えるうえで重要である。@fig-amount は、この関係を図で表したものである。
 
-```{=latex}
-\begin{figure}[H]
-\centering
-
-\begin{tikzpicture}[scale=0.5, >=stealth]
-
-  % 座標軸
-  \draw[->] (-0.5,0) -- (6.5,0) node[right] {$x$};
-  \draw[->] (0,-0.5) -- (0,17.5) node[above] {$y$};
-  \node[below left] at (0,0) {O};
-
-  % グラフ y = 3x
-  \draw[thick] (0,0) -- (5.5,16.5) node[above right] {$y=3x$};
-
-  % 点
-  \fill (2,6) circle (2.5pt) node[above left] {$\mathrm{A}(2,6)$};
-  \fill (5,15) circle (2.5pt) node[above left] {$\mathrm{B}(5,15)$};
-
-  % 補助線
-  \draw[dashed] (2,0) -- (2,6);
-  \draw[dashed] (5,0) -- (5,15);
-  \draw[dashed] (0,6) -- (5,6);
-  \draw[dashed] (0,15) -- (5,15);
-
-  % xの増加量
-  \draw[<->] (2,-0.8) -- (5,-0.8)
-    node[midway, below] {$x$の増加量 $= 5-2 = 3$};
-
-  % yの増加量
-  \draw[<->] (5.8,6) -- (5.8,15)
-    node[midway, right] {$y$の増加量 $= 15-6 = 9$};
-
-  % 目盛り
-  \node[below] at (2,0) {$2$};
-  \node[below] at (5,0) {$5$};
-  \node[left] at (0,6) {$6$};
-  \node[left] at (0,15) {$15$};
-
-\end{tikzpicture}
-
-\caption{$y=3x$における$x$と$y$の増加量}
-\label{fig-increase-amount}
-
-\end{figure}
-```
+![$y = 3x$における$x$と$y$の増加量](figures/image3.png){#fig-amount fig-cap="$y = 3x$における$x$と$y$の増加量" width="60%"}
 
 　$a$ が負の場合も考えてみる。一次関数 $y=-2x$ について、$x$ が $-6$ から $2$ まで変化したとする。このとき、$x=-6$ では $y=-2\times(-6)=12$ であり、$x=2$ では $y=-2\times2=-4$ となる。したがって、$x$ が $-6$ から $2$ まで変化すると、$y$ は $12$ から $-4$ まで**変化する**。このときの $y$ の増加量は、$-4-12=-16$ である。
 
 　ここで、実際には $y$ が $12$ から $-4$ へ**減少しているにもかかわらず、増加量が $-16$ となる**ことに注意されたい。「減少しているのだから増加量ではない」と考えてはいけない。数学では、変化する前の値と変化した後の値を決め、その順番にしたがって、$\text{増加量}=\text{後の値}-\text{前の値}$ と計算する。したがって、この場合は $-4-12=-16$ が正しい。$12-(-4)=16$ と計算してはいけない。これは、変化の向きを逆にしてしまっているからである。
 
-　このことは、グラフ上で矢印をイメージすると分かりやすい。\ref{fig-arrow}が矢印を書いた図で、矢印の**根元が変化する前の値**、矢印の**先が変化した後の値**であると考えればよい。そして、増加量は $\text{矢印の先の値}-\text{矢印の根元の値}$ によって求められる。
+　このことは、グラフ上で矢印をイメージすると分かりやすい。@fig-arrow が矢印を書いた図で、矢印の**根元が変化する前の値**、矢印の**先が変化した後の値**であると考えればよい。そして、増加量は $\text{矢印の先の値}-\text{矢印の根元の値}$ によって求められる。
 
-```{=latex}
-\begin{figure}[H]
-\centering
-
-\begin{tikzpicture}[scale=0.5, >=stealth]
-% 座標軸
-  \draw[->] (-0.5,0) -- (6.5,0) node[right] {$x$};
-  \draw[->] (0,-0.5) -- (0,17.5) node[above] {$y$};
-  \node[below left] at (0,0) {O};
-
-% グラフ y = 3x
-  \draw[thick] (0,0) -- (5.5,16.5) node[above right] {$y=3x$};
-
-% 矢印
- \draw[line width=1.8pt, ->] (2,6) -- (5,6);
- \draw[line width=1.8pt, ->] (5,6) -- (5,15);
-
-%補助線
- \draw[dashed] (2,6) -- (2,5.5);
- \draw[dashed] (5,6) -- (5,4.5);
- \draw[dashed] (5,6) -- (6,6);
- \draw[dashed] (5,15) -- (6,15);
-
-
-%表記
- \node[below] at (2,5.5) {$x$の変化前の値};
- \node[below] at (5,4.5) {$x$の変化後の値};
- \node[right] at (6,6) {$y$の変化前の値};
- \node[right] at (6,15) {$y$の変化後の値};
-
-% 目盛り
-  \node[below] at (2,0) {$2$};
-  \node[below] at (5,0) {$5$};
-  \node[left] at (0,6) {$6$};
-  \node[left] at (0,15) {$15$};
-
-\end{tikzpicture}
-
-\caption{増加量のイメージ}
-\label{fig-arrow}
-
-\end{figure}
-```
+![増加量のイメージ](figures/image4.png){#fig-arrow fig-cap="増加量のイメージ" width=60%}
 
 　このように、増加量を考えるときには、単に「増えたか、減ったか」を見るのではなく、**どこからどこへ変化したのか**を意識することが重要である。
 
@@ -170,69 +84,9 @@ $$
 \text{変化の割合} = \text{傾き} = a
 $$
 
-　以下の図\ref{fig-slope-direction}がその概要である。
+　以下の @fig-sloped がその概要である。
 
-```{=latex}
-\begin{figure}[H]
-\centering
-
-\begin{tikzpicture}[scale=0.8, >=stealth]
-
-  % ==================== 左側: a > 0 (右上がり) ====================
-  \begin{scope}[xshift=0cm]
-    % タイトル
-    \node[above, font=\bfseries] at (1.5, 3.9) {$a > 0$（右上がりの直線）};
-    
-    % 座標軸
-    \draw[->] (-0.8,0) -- (3.5,0) node[right] {$x$};
-    \draw[->] (0,-0.8) -- (0,3.5) node[above] {$y$};
-    \node[below left] at (0,0) {O};
-
-    % 直線 y = ax + b (a > 0)
-    \draw[thick, blue] (-0.5, 0.25) -- (3.2, 3.1) node[right] {$y=ax+b$};
-
-    % 変化を示す階段（1進んで a 増える）
-    \draw[line width=1.2pt, ->, red] (1, 1.375) -- (2, 1.375) 
-      node[midway, below, font=\small] {$+1$};
-    \draw[line width=1.2pt, ->, red] (2, 1.375) -- (2, 2.2) 
-      node[midway, right, font=\small] {$+a$};
-
-    % 点
-    \fill (1, 1.375) circle (2pt);
-    \fill (2, 2.2) circle (2pt);
-  \end{scope}
-
-  % ==================== 右側: a < 0 (右下がり) ====================
-  \begin{scope}[xshift=6.5cm]
-    % タイトル
-    \node[above, font=\bfseries] at (1.5, 3.9) {$a < 0$（右下がりの直線）};
-    
-    % 座標軸
-    \draw[->] (-0.8,0) -- (3.5,0) node[right] {$x$};
-    \draw[->] (0,-0.8) -- (0,3.5) node[above] {$y$};
-    \node[below left] at (0,0) {O};
-
-    % 直線 y = ax + b (a < 0)
-    \draw[thick, blue] (-0.5, 3.1) -- (3.2, 0.25) node[right] {$y=ax+b$};
-
-    % 変化を示す階段（1進んで a 減る）
-    \draw[line width=1.2pt, ->, red] (1, 1.98) -- (2, 1.98) 
-      node[midway, above, font=\small] {$+1$};
-    \draw[line width=1.2pt, ->, red] (2, 1.98) -- (2, 1.18) 
-      node[midway, right, font=\small] {$-a$};
-
-    % 点
-    \fill (1, 1.98) circle (2pt);
-    \fill (2, 1.18) circle (2pt);
-  \end{scope}
-
-\end{tikzpicture}
-
-\caption{傾き $a$ の符号による直線の向きの違い}
-\label{fig-slope-direction}
-
-\end{figure}
-```
+![傾き$a$の符号による直線の向きの違い](figures/image5.png){#fig-sloped fig-cap="傾き$a$の符号による直線の向きの違い" width=60%}
 
 ### 切片
 
